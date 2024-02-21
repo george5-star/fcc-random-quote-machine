@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+#root {
+    background-color: white;
+    width: min(90%, 40em);
+    min-height: 20em;
+    border: 1px solid red;
+    border-radius: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    display: block;
+    background-color: gray;
+    padding: .5em;
+    color: black;
+}
