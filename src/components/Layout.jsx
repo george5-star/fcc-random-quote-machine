@@ -26,8 +26,11 @@ const BtnContainers = styled.div`
 
 function Layout() {
   const [quotes, setQuotes] = useState([]);
-  const [quote, setQuote] = useState("");
-  const [author, setAuthor] = useState("");
+  const [quote, setQuote] = useState(
+    "" ||
+      "Our brain isn't designed to get things done; it's designed to keep us safe."
+  );
+  const [author, setAuthor] = useState("" || "David Allen");
   useEffect(() => {
     async function getQuote() {
       const res = await fetch("https://type.fit/api/quotes");
@@ -47,13 +50,8 @@ function Layout() {
   return (
     <Wrapper id="quote-box">
       <div id="text">
-        <span>
-          <ReactTyped
-            strings={[quote]}
-            backSpeed={50}
-            typeSpeed={70}
-            style={{ fontSize: "2rem" }}
-          />
+        <span style={{ fontSize: "2rem" }}>
+          <ReactTyped strings={[quote]} backSpeed={50} typeSpeed={70} />
           <br />
           <span
             id="author"
